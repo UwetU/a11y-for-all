@@ -1,0 +1,11 @@
+{
+    "parser": "postcss-scss",
+    "map": false,
+    "plugins": {
+        "postcss-import": {},
+        "postcss-normalize": {},
+        "autoprefixer": {},
+        "postcss-preset-env": { "stage": 3 },
+        "cssnano": {}
+    }
+}
