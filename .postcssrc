@@ -3,9 +3,13 @@
     "map": false,
     "plugins": {
         "postcss-import": {},
-        "postcss-normalize": {},
+        "postcss-normalize": {
+            "browsers": "last 10 versions"
+        },
         "autoprefixer": {},
-        "postcss-preset-env": { "stage": 3 },
+        "postcss-preset-env": {
+            "stage": 3
+        },
         "cssnano": {}
     }
 }

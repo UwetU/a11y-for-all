@@ -1,43 +1,69 @@
-<script setup lang="ts">
-    import HelloWorld from './components/HelloWorld.vue';
-</script>
-
 <template>
-    <div>
-        <a
-            href="https://vitejs.dev"
-            target="_blank"
-        >
-            <img
-                src="/vite.svg"
-                class="logo"
-                alt="Vite logo"
-            />
-        </a>
-        <a
-            href="https://vuejs.org/"
-            target="_blank"
-        >
-            <img
-                src="./assets/vue.svg"
-                class="logo vue"
-                alt="Vue logo"
-            />
-        </a>
+    <div class="app">
+        <header class="app-header">
+            <RouterLink
+                class="app-header__link"
+                to="/"
+                >A11Y FOR ALL</RouterLink
+            >
+        </header>
+        <aside class="app-aside">
+            <nav class="app-navigation">
+                <ul class="app-navigation__list">
+                    <li class="app-navigation__list-item">
+                        <RouterLink
+                            class="app-navigation__list-link"
+                            to="/"
+                            >Introdution</RouterLink
+                        >
+                    </li>
+                    <li class="app-navigation__list-item">
+                        <RouterLink
+                            class="app-navigation__list-link"
+                            to="/tutorials"
+                            >Tutorials</RouterLink
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="app-main">
+            <RouterView />
+        </main>
+        <footer class="app-footer">
+            <a href="https://github.com/UwetU/a11y-for-all">GitHub</a>
+        </footer>
     </div>
-    <HelloWorld msg="Vite + Vue" />
 </template>
 
+<script setup lang="ts"></script>
+
 <style scoped>
-    .logo {
-        height: 6em;
-        padding: 1.5em;
-        will-change: filter;
+    .app {
+        display: grid;
+        grid-template-areas:
+            'header header'
+            'aside main'
+            'footer footer';
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 20rem 1fr;
+        min-height: 100vh;
+        width: 100%;
     }
-    .logo:hover {
-        filter: drop-shadow(0 0 2em #646cffaa);
+
+    .app-header {
+        grid-area: header;
     }
-    .logo.vue:hover {
-        filter: drop-shadow(0 0 2em #42b883aa);
+
+    .app-aside {
+        grid-area: aside;
+    }
+
+    .app-main {
+        grid-area: main;
+    }
+
+    .app-footer {
+        grid-area: footer;
     }
 </style>
